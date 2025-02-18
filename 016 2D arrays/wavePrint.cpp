@@ -1,6 +1,7 @@
 #include<iostream>
 #include<vector>
 using namespace std;
+
 vector<int> wavePrint(vector<vector<int> > arr, int nRows, int mCols)
 {
     vector<int> ans;
@@ -26,3 +27,4 @@ vector<int> wavePrint(vector<vector<int> > arr, int nRows, int mCols)
     }
     return ans;
 }
+
