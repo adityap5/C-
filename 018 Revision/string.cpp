@@ -97,6 +97,29 @@ void removeAllOccurance(string& s, string& part){
         s.erase(s.find(part), part.length());
     }
 }
+int stringCompression(vector<char>& chars){
+    int i=0;
+    int n =chars.size();
+    int ansIndex =0;
+    while(i<n){
+        int j = i+1;
+        while(j<n && chars[i]==chars[j]){
+            j++;
+        }
+
+        chars[ansIndex++] = chars[i];
+
+        int count = j-i;
+        if(count>1){
+            string cnt = to_string(count);
+            for(char ch: cnt){
+                chars[ansIndex++] = ch;
+            }
+        }
+        i=j;
+    }
+    return ansIndex;
+}  
 int main(){
     // char s[20] ;
     string w = "My name is Bhatura";
@@ -130,6 +153,7 @@ int main(){
     // cout<<anotherInput<<endl;
     // replaceSpace(w);
 
+  
     string g ="daabcbaabcbc";
     string part = "abc";
     removeAllOccurance(g,part);
