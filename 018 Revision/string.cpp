@@ -14,6 +14,12 @@ void printV(vector<char> s){
         cout<<s[i]<<" ";
     }
 }
+void printString(string& s){
+    int n = s.size();
+    for(int i=0;i<n;i++){
+        cout<<s[i]<<" ";
+    }
+}
 
 void reverseString(char s[],int n){
     int st=0;
@@ -77,11 +83,25 @@ char getMaxOccurance(string& s){
     char finalAns = ans + 'a';
     return finalAns;
 }
+void replaceSpace(string& s){
+    char rep ='g';
+    int n =s.size();
+    for(int i=0;i<n;i++){
+        if(s[i] == ' ' ){
+            s[i] = rep;
+        }
+    }
+}
+void removeAllOccurance(string& s, string& part){
+    while(s.length()!=0 && s.find(part)<s.length()){
+        s.erase(s.find(part), part.length());
+    }
+}
 int main(){
     // char s[20] ;
-    string w = "A man, a plan, a canal: Panama";
-    vector<char> s = {'t','h','e',' ','b','l','u','e'};
-    string k ="HelloHell";
+    string w = "My name is Bhatura";
+    // vector<char> s = {'t','h','e',' ','b','l','u','e'};
+    // string k ="HelloHell";
 //    cin>>s;
     // int len = getLength(s);
     // reverseString(s,len);
@@ -90,24 +110,30 @@ int main(){
     // reverseWordsInPlace(s);
     // printV(s);
     // cout<<getMaxOccurance(k);
-    char input[100];
+    // char input[100];
 
-    cout<<"Enter your text"<<endl;
-    cin.getline(input,100); //is a function used to read a line of text (including spaces) from the standard input (cin) into a character array.
-    cout<<input<<endl;
-    //custom delimeter with String
-    char ip[100];
+    // cout<<"Enter your text"<<endl;
+    // cin.getline(input,100); //is a function used to read a line of text (including spaces) from the standard input (cin) into a character array.
+    // cout<<input<<endl;
+    // //custom delimeter with String
+    // char ip[100];
 
-    cout<<"Enter your text"<<endl;
-    cout<<"Enter your text (use '#' to stop)" <<endl;
-    cin.getline(ip,100,'#');
-    cout<<ip<<endl;
+    // cout<<"Enter your text"<<endl;
+    // cout<<"Enter your text (use '#' to stop)" <<endl;
+    // cin.getline(ip,100,'#');
+    // cout<<ip<<endl;
 
-    //custom delimeter with String
-    string anotherInput;
-    cout<<"Enter your text (use '#' to stop)" <<endl;
-    getline(cin,anotherInput,'#');
-    cout<<anotherInput<<endl;
+    // //custom delimeter with String
+    // string anotherInput;
+    // cout<<"Enter your text (use '#' to stop)" <<endl;
+    // getline(cin,anotherInput,'#');
+    // cout<<anotherInput<<endl;
+    // replaceSpace(w);
+
+    string g ="daabcbaabcbc";
+    string part = "abc";
+    removeAllOccurance(g,part);
+    printString(g);
     
     return 0;
 }
