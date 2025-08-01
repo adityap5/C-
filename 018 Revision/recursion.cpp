@@ -32,6 +32,13 @@ int fib(int n){
     return fib(n-1) + fib(n-2);
 }
 
+// climbing stairs
+int climbStairs(int n){
+    if(n<0) return 0;
+    if(n==1) return 1;
+    return climbStairs(n-1) + climbStairs(n-2);
+}
+
 int main(){
     cout<<"Recursion"<<endl;
     // int ans = factorial(5);
@@ -39,7 +46,8 @@ int main(){
     // countPrinting(5);
     int n;
     cin>>n;
-    int ans = fib(n);
+    // int ans = fib(n);
+    int ans = climbStairs(n);
     cout<< ans << endl;
     return 0;
 }
